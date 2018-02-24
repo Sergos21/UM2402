@@ -1,0 +1,68 @@
+/*---------------------------------*/
+/* отображение панели инструментов */
+QToolBar {
+  spacing: 3px;
+  border: 1px solid #8282a0;
+  color: #dcdcdc;
+  background: #4a4c4a;
+}
+/*-------------------------------------*/
+/* отображение главного меню программы */
+QMenuBar {
+  font: 12pt "Calibri";
+  color: #f0f0f0;
+}
+
+QWidget {
+  background-color: #616161;
+}
+
+/* общая отрисовка всех кнопок */
+QPushButton {
+  image: url(:/resources/gui/button_normal.png);
+  border: none;
+  font: 10pt "Calibri";
+  color: #dcdcdc;
+}
+
+QPushButton::hover {
+  image: url(:/resources/gui/button_hover.png);
+  border: none;
+  font: 10pt "Calibri";
+  color: #ccdcdc;
+}
+
+QPushButton::pressed {
+  image: url(:/resources/gui/button_pressed.png);
+  border: none;
+  font: 10pt "Calibri";
+  color: #ccdcdc;
+}
+
+/* ------------------------------ */
+QRadioButton::enabled {
+  font: 10pt "Calibri";
+  color: #dcdcdc;
+}
+
+QRadioButton::disabled {
+  font: 10pt "Calibri";
+  color: #2a2a2a;
+}
+
+QRadioButton::indicator {
+    width: 15px;
+    height: 15px;
+}
+
+QRadioButton::indicator::checked {
+  image: url(:/resources/gui/radio_button_checked.png);
+}
+
+QRadioButton::indicator::unchecked {
+  image: url(:/resources/gui/radio_button_normal.png);
+}
+
+QRadioButton::indicator::disabled {
+  image: url(:/resources/gui/radio_button_disabled.png);
+}

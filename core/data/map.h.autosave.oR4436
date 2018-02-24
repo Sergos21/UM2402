@@ -1,0 +1,36 @@
+#pragma once
+
+#include "project_item.h"
+
+namespace data {
+namespace map {
+
+enum class MapGameMode {
+  TurnBase,
+  RealTime
+};
+
+enum class MapCellType {
+  Tile,
+  Hexagonal,
+  Fractal
+};
+
+NETCOM_DERIVED_CONTRACT(Map, ProjectItem, GameMap)
+{
+  Q_GADGET
+public:
+  QString name;               // имя карты
+  NETCOM_PROPERTY(name)
+
+  QString description;        // описание карты
+  NETCOM_PROPERTY(description)
+
+  MapGameMode mode;           // игровой режим карты
+  NETCOM_PROPERTY(mode)
+
+  MapCellType cell
+};
+
+} // namespace map
+} // namespace data

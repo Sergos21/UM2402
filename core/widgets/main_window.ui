@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ОБЩИЕ НАСТРОЙКИ */
+QToolBar {
+    spacing: 3px;
+    border: 1px solid #8282a0;
+	 color: #dcdcdc;
+	 background: rgb(74, 76, 74);
+}
+
+QMenuBar {
+	font: 12pt &quot;Calibri&quot;;
+	color: #f0f0f0;
+}
+
+QMenuBar::item {
+    spacing: 5px; /* spacing between menu bar items */
+    padding: 1px 5px;
+    background: transparent;
+}
+
+QMenuBar::item:selected { 
+    border: 1px solid #8282a0; 
+}
+
+QMenuBar::item:pressed {
+	border: 1px solid #8282a0;
+	background: #645a6e;
+}
+
+QDialog, QWidget {
+	background-color: #616161;
+	selection-background-color: #645a6e;
+	selection-color: #94a4b9;
+	outline: 0;
+}
+
+QGroupBox {
+	background: transparent;
+	border: 1px solid #8282a0;
+	color: #dcdcdc;
+	font: 11pt &quot;Calibri&quot;;
+	margin-top: 1ex;
+	/*background: rgba(201, 223, 255,54);*/
+	background: #717171;
+	padding-top: 15px;
+}
+
+QGroupBox::title {
+	subcontrol-origin: margin;
+	padding: 0px 10px;
+	border: 1px solid #8282a0;
+	/*background: rgba(201, 223, 255, 104);*/
+	background: #515151;
+}
+
+QGroupBox::indicator {
+	width: 16px;
+	height: 16px;
+}
+
+QGroupBox::indicator:checked {
+	border: 1px solid green;
+	border-radius: 3px;
+}
+
+QGroupBox::indicator:unchecked {
+	border: 1px solid rgb(223, 156, 156);
+	border-radius: 3px;
+}
+
+/* общая отрисовка всех кнопок */
+QPushButton {
+	border-image: url(:/resources/gui/button_normal.png);
+	font: 11pt &quot;Calibri&quot;;
+	color: #dcdcdc;
+	min-width: 75 px;
+	min-height: 25px;
+	padding: 0.25ex;
+}
+
+QPushButton::hover {
+	border-image: url(:/resources/gui/button_hover.png);
+	font: 11pt &quot;Calibri&quot;;
+	selection-color: #94a4b9;
+	min-width: 75 px;
+	min-height: 25px;
+	padding: 0.25ex;
+}
+
+QPushButton::pressed {
+	border-image: url(:/resources/gui/button_pressed.png);
+	font: 11pt &quot;Calibri&quot;;
+	selection-color: #94a4b9;
+	min-width: 75 px;
+	min-height: 25px;
+	padding: 0.25ex;
+}
+
+QPushButton::default {
+	/*border: 1px solid #8282a0;*/ 
+}
+
+/* ------------------------------ */
+QRadioButton::enabled {
+	font: 10pt &quot;Calibri&quot;;
+	color: #dcdcdc;
+}
+
+QRadioButton::disabled {
+	font: 10pt &quot;Calibri&quot;;
+	color: #2a2a2a;
+}
+
+QRadioButton::indicator {
+    width: 15px;
+    height: 15px;
+}
+
+QRadioButton::indicator::checked {
+	image: url(:/resources/gui/radio_button_checked.png);
+}
+
+QRadioButton::indicator:unchecked:hover,
+QRadioButton::indicator:unchecked:focus,
+QRadioButton::indicator:unchecked:pressed {
+	image: url(:/resources/gui/radio_button_normal.png);
+}
+
+QRadioButton::indicator::disabled {
+	image: url(:/resources/gui/radio_button_disabled.png);
+}
+
+ExtLineEdit QLabel {
+	font: 10pt &quot;Calibri&quot;;
+	color: #f0f0f0;
+	background-color: #4f4f4f;
+	border: 1px solid #949430;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	qproperty-alignment: 'AlignCenter';
+}
+
+ExtLineEdit QLineEdit {
+	font: 10pt &quot;Calibri&quot;;
+	color: #f0f0f0;
+	background-color: #787878;
+	selection-color: #7e7550;
+	border-top: 1px solid #949430;
+	border-bottom: 1px solid #949430;
+	border-right: 1px solid #949430;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	qproperty-alignment: 'AlignVCenter | AlignLeft';
+	padding-left: 2px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionNewProject"/>
+    <addaction name="actionLoadProject"/>
+    <addaction name="actionSaveProject"/>
+    <addaction name="action_4"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Редактирование</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Инструменты</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Карта</string>
+    </property>
+    <addaction name="action_NewMap"/>
+    <addaction name="action_8"/>
+    <addaction name="action_9"/>
+    <addaction name="separator"/>
+    <addaction name="action_11"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Объекты</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>Свойства</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_7">
+    <property name="title">
+     <string>Игровой режим</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_8">
+    <property name="title">
+     <string>Информация</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_7"/>
+   <addaction name="menu_8"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNewProject">
+   <property name="text">
+    <string>Новый проект</string>
+   </property>
+  </action>
+  <action name="actionLoadProject">
+   <property name="text">
+    <string>Загрузить проект</string>
+   </property>
+  </action>
+  <action name="actionSaveProject">
+   <property name="text">
+    <string>Сохранить проект</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Сохранить проект как...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action_NewMap">
+   <property name="text">
+    <string>Новая карта</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>Загрузить карту</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>Сохранить карту</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Новый объект</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
