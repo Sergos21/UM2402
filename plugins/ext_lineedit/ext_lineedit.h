@@ -8,6 +8,7 @@ class QLabel;
 class QLineEdit;
 
 QT_END_NAMESPACE
+// !!!!!!
 
 class ExtLineEdit : public QWidget {
   Q_OBJECT
